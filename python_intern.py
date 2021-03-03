@@ -44,3 +44,26 @@ def update_name(email):
 def disp_message(fname, lname, email):
     data = connection.update_name(fname,lname,email)
     return render_template('new_disp_message.html',data=data)
+
+@app.route("/new_visitor",methods=['GET'])
+def new_visitor():
+        return render_template('new_visitor.html')
+        fname = request.form['fname']
+        lname = request.form['lname']
+        addr = request.form['addr']
+        pin = request.form['pin']
+        mob = request.form['mob']
+        email = request.form['email']
+        dob = request.form['dob']
+        gender = request.form['gender']
+        connection.insert_visitor(fname,lname,addr,pin,mob,email,dob,gender)
+
+
+@app.route("/new_visitor", methods=['POST'])
+def get_new_contact():
+     fname = request.form['fname']
+     lname = request.form['lname']
+     contact = request.form['contact']
+     connect.add_contact(fname, lname, contact)
+     ans = connection.new_disp_visitor()
+     return render_template('new_home.html', data=ans)
