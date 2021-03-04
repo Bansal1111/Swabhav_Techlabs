@@ -1,4 +1,4 @@
-from flask import Flask, redirect, url_for, request, render_template
+from flask import Flask, redirect, jsonify, url_for, request, render_template
 import connection
 from Dashboards import booking
 import matplotlib.pyplot as plt
@@ -64,4 +64,17 @@ def booking_dashboard():
         label=["Mon", "Tue", "Wed", "Thu", "Fri"],
         serie=[5, 2, 4, 2, 0],
     )
+
+
+@app.route("/test", methods=["GET"])
+def ret_book():
+    # data = {"label": , }
+    message = {"label": ["A", "B", "C"], "value": [1, 2, 3]}
+    return jsonify(message)
+
+
+@app.route("/dashboard")
+def dashboard():
+    print("hey")
+    return render_template("charts.html", s="Sahil")
 
