@@ -4,7 +4,7 @@ $(document).ready(async function () {
 
     'use strict';
     var l, d;
-    await fetch('/test')
+    await fetch('/industry_data')
         .then(function (response) {
             return response.json();
         }).then(function (text) {
@@ -38,7 +38,7 @@ $(document).ready(async function () {
             labels: l,
             datasets: [
                 {
-                    label: "Event Booking",
+                    label: "Industrywise Booking",
                     fill: true,
                     lineTension: 0.3,
                     backgroundColor: "rgba(51, 179, 90, 0.38)",
@@ -93,14 +93,11 @@ $(document).ready(async function () {
 
     var barChartExample = new Chart(BARCHARTEXMPLE, {
         type: 'bar',
-
         data: {
-
             labels: l,
             datasets: [
                 {
-
-                    label: "Event Booking",
+                    label: "Industrywise Booking",
                     backgroundColor: [
                         'rgba(51, 179, 90, 0.6)',
                         'rgba(51, 179, 90, 0.6)',
@@ -121,12 +118,10 @@ $(document).ready(async function () {
                     ],
                     borderWidth: 1,
                     data: d,
-
                 },
 
             ]
         },
-
         options: {
             scales: {
                 xAxes: [{

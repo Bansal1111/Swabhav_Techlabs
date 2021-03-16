@@ -4,7 +4,7 @@ $(document).ready(async function () {
 
     'use strict';
     var l, d;
-    await fetch('/test')
+    await fetch('/sales_company')
         .then(function (response) {
             return response.json();
         }).then(function (text) {
@@ -38,7 +38,7 @@ $(document).ready(async function () {
             labels: l,
             datasets: [
                 {
-                    label: "Event Booking",
+                    label: "Company Sales",
                     fill: true,
                     lineTension: 0.3,
                     backgroundColor: "rgba(51, 179, 90, 0.38)",
@@ -62,6 +62,20 @@ $(document).ready(async function () {
                 },
 
             ]
+        },
+        options: {
+            scales: {
+                xAxes: [{
+                    ticks: {
+                        min: 0
+                    }
+                }],
+                yAxes: [{
+                    ticks: {
+                        min: 0
+                    }
+                }]
+            }
         }
     });
 
@@ -93,14 +107,11 @@ $(document).ready(async function () {
 
     var barChartExample = new Chart(BARCHARTEXMPLE, {
         type: 'bar',
-
         data: {
-
             labels: l,
             datasets: [
                 {
-
-                    label: "Event Booking",
+                    label: "Company Sales",
                     backgroundColor: [
                         'rgba(51, 179, 90, 0.6)',
                         'rgba(51, 179, 90, 0.6)',
@@ -121,25 +132,9 @@ $(document).ready(async function () {
                     ],
                     borderWidth: 1,
                     data: d,
-
                 },
 
             ]
-        },
-
-        options: {
-            scales: {
-                xAxes: [{
-                    ticks: {
-                        min: 0
-                    }
-                }],
-                yAxes: [{
-                    ticks: {
-                        min: 0
-                    }
-                }]
-            }
         }
     });
 
@@ -155,7 +150,7 @@ $(document).ready(async function () {
                     "#FF6384",
                     "#FFCE56"
                 ],
-                label: 'My dataset' // for legend
+                label: 'Company Sales' // for legend
             }],
             labels: l
         }
