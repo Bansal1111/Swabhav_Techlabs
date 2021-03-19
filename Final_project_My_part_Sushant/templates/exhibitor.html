@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <form class="container" action="/exhibitor" method="POST">
+  <div class="mb-3">
+    <label class="form-label">Enter exhibitor name</label>
+    <input type="text" class="form-control" name ="exhibitor_name" required>
+  </div>
+        <div class="mb-3">
+    <label class="form-label">Enter your email</label>
+    <input type="email" class="form-control" name ="email_id" required>
+  </div>
+          <div class="mb-3">
+    <label class="form-label">Enter your contact number</label>
+    <input type="text" class="form-control" name ="phone_no" required>
+  </div>
+                  <div class="mb-3">
+    <label class="form-label">Enter your company name</label>
+    <input type="text" class="form-control" name ="company_name" required>
+  </div>
+        <div class="mb-3">
+    <label class="form-label">Enter your company description</label>
+    <input type="text" class="form-control" name ="company_description" required>
+  </div>
+        <div class="mb-3">
+    <label class="form-label">Enter your company address</label>
+    <input type="text" class="form-control" name ="company_addr" required>
+  </div>
+        <div class="mb-3">
+    <label class="form-label">Enter your company pin code</label>
+    <input type="text" class="form-control" name ="company_pin_code" required>
+  </div>
+        <div class="input-group mb-3">
+  <label class="input-group-text" >Select industry Name</label>
+  <select class="form-select"  name="industry_name">
+      {% for item in industry_data %}
+        <option value="{{item[1]}}">{{item[1]}}</option>
+      {% endfor %}
+  </select>
+</div>
+        <div class="input-group mb-3">
+  <label class="input-group-text" >Select State Name</label>
+  <select class="form-select"  name="state_name">
+      {% for item in state_data %}
+        <option value="{{item[1]}}">{{item[1]}}</option>
+      {% endfor %}
+  </select>
+</div>
+
+                <div class="input-group mb-3">
+  <label class="input-group-text" >Select Country Name</label>
+  <select class="form-select"  name="country_name">
+      {% for item in country_data %}
+        <option value="{{item[1]}}">{{item[1]}}</option>
+      {% endfor %}
+  </select>
+</div>
+
+  <button type="submit" class="btn btn-outline-primary">Add</button>
+</form >
+    <hr>
+    <div class="container">
+    <table class="table table-hover"  style="text-align:center">
+  <thead>
+    <tr>
+      <th scope="col">Sno</th>
+      <th scope="col">Exhibitor name</th>
+      <th scope="col">Email address</th>
+      <th scope="col">Phone number</th>
+      <th scope="col">Company name</th>
+      <th scope="col">Company Description</th>
+      <th scope="col">Company Address</th>
+      <th scope="col">Company pin code</th>
+      <th scope="col">Industry name</th>
+      <th scope="col">State name</th>
+      <th scope="col">Country name</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {% for item in exhibitor_data %}
+  <tr>
+      <td>{{item[0]}}</td>
+      <td>{{item[1]}}</td>
+      <td>{{item[2]}}</td>
+      <td>{{item[3]}}</td>
+      <td>{{item[4]}}</td>
+      <td>{{item[5]}}</td>
+      <td>{{item[6]}}</td>
+      <td>{{item[7]}}</td>
+      <td>{{item[8]}}</td>
+      <td>{{item[9]}}</td>
+      <td>{{item[10]}}</td>
+      <td><a href="/update_exhibitor/{{item[0]}}/{{item[1]}}/{{item[2]}}/{{item[3]}}/{{item[4]}}/{{item[5]}}/{{item[6]}}/{{item[7]}}/{{item[8]}}/{{item[9]}}/{{item[10]}}" type="button" class="btn btn-outline-warning btn-sm">Update</a>
+        <a href="/delete_exhibitor/{{item[0]}}" type="button" class="btn btn-outline-danger  btn-sm">Delete</a></td>
+  </tr>
+{% endfor %}
+  </tbody>
+</table>
+      </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+  </body>
+</html>

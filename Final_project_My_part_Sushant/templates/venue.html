@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <form class="container" action="/venue" method="POST">
+  <div class="mb-3">
+    <label class="form-label">Enter venue city</label>
+    <input type="text" class="form-control" name ="venue_city" required>
+  </div>
+        <div class="mb-3">
+    <label class="form-label">Enter venue address</label>
+    <input type="text" class="form-control" name ="venue_addr" required>
+  </div>
+
+        <div class="input-group mb-3">
+  <label class="input-group-text" >Select State Name</label>
+  <select class="form-select"  name="state_name">
+      {% for item in state_data %}
+        <option value="{{item[1]}}">{{item[1]}}</option>
+      {% endfor %}
+  </select>
+</div>
+
+                <div class="input-group mb-3">
+  <label class="input-group-text" >Select Country Name</label>
+  <select class="form-select"  name="country_name">
+      {% for item in country_data %}
+        <option value="{{item[1]}}">{{item[1]}}</option>
+      {% endfor %}
+  </select>
+</div>
+
+  <button type="submit" class="btn btn-outline-primary">Add</button>
+</form >
+    <hr>
+    <div class="container">
+    <table class="table table-hover"  style="text-align:center">
+  <thead>
+    <tr>
+      <th scope="col">Sno</th>
+      <th scope="col">Venue city</th>
+      <th scope="col">Venue address</th>
+      <th scope="col">State Name</th>
+      <th scope="col">Country Name</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {% for item in venue_data %}
+  <tr>
+      <td>{{item[0]}}</td>
+      <td>{{item[1]}}</td>
+      <td>{{item[2]}}</td>
+      <td>{{item[3]}}</td>
+      <td>{{item[4]}}</td>
+      <td><a href="/update_venue/{{item[0]}}/{{item[1]}}/{{item[2]}}/{{item[3]}}/{{item[4]}}" type="button" class="btn btn-outline-warning btn-sm mx-1">Update</a>
+        <a href="/delete_venue/{{item[0]}}" type="button" class="btn btn-outline-danger  btn-sm mx-1">Delete</a></td>
+  </tr>
+{% endfor %}
+  </tbody>
+</table>
+      </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+  </body>
+</html>

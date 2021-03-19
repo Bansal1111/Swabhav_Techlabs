@@ -1,0 +1,9 @@
+rainbow=["green","orange","violet"]
+get_index=rainbow.index("violet")
+rainbow.insert(get_index,"red")
+print(rainbow)
+rainbow.append("yellow")
+print(rainbow)
+print(rainbow[::-1])
+rainbow.remove("orange")
+print(rainbow)
