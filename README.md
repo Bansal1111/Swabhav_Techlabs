@@ -15,7 +15,7 @@
 <details><summary><b>Video Demonstration</b></summary>
 </br>
 <h4 align="center">Dashboard</h6>
-<img align="center" alt="Dashboard" src="Videos/dashboard.gif"> </img></br></br>
+<img class="center" alt="Dashboard" src="Videos/dashboard.gif"> </img></br></br>
 Adding new data and reflecting the same on Database. 
 <img alt="Add" src="Videos/add.gif"></img></br></br>
 Updating the existing data and reflecting the same on Database.
