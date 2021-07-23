@@ -1,4 +1,4 @@
-<h1 align="center">Databaase Management System</h1>
+<h1 align="center">Database Management System</h1>
   
 
 <details><summary><b>Tools</b></summary>
@@ -9,14 +9,18 @@
 | 1. | HTML , CSS , Javascript , JS for frontend.                                                                                                                             |
 | 2. | Heidi SQL for storing data.                                                                                                                                            |
 | 3. | Flask and python for deployment.                                                                                                                                       |
-|
+
 </details>   
   
 <details><summary><b>Video Demonstration</b></summary>
 </br>
+Dashboard view
 <img alt="Dashboard" src="Videos/dashboard.gif"> </img></br></br>
+Adding new data and reflecting the same on Database. 
 <img alt="Add" src="Videos/add.gif"></img></br></br>
+Updating the existing data and reflecting the same on Database.
 <img alt="Update" src="Videos/update.gif"></img>
+Deleting the data and reflecting the same on Database.
 <img alt="Delete" src="Videos/delete.gif"></img>
 </details>      
 
