@@ -14,7 +14,7 @@
   
 <details><summary><b>Video Demonstration</b></summary>
 </br>
-Dashboard view
+<h6 align="center">Dashboard</h6>
 <img alt="Dashboard" src="Videos/dashboard.gif"> </img></br></br>
 Adding new data and reflecting the same on Database. 
 <img alt="Add" src="Videos/add.gif"></img></br></br>
