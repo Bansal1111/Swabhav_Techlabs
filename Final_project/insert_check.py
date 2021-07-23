@@ -4,7 +4,7 @@ from datetime import datetime
 
 
 def conn():
-    con = connect(host="127.0.0.1", username="root", password="root", database="iimftp")
+    con = connect(host="127.0.0.1", username="root", password="root", database="iimft")
     cursor = con.cursor()
     return con, cursor
 
