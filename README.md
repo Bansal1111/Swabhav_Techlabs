@@ -6,7 +6,7 @@
 
 |    | Technologies used                                                                                                                                                      |
 |----|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1. | HTML , CSS , Javascript , JS for frontend.                                                                                                                             |
+| 1. | HTML , CSS , Bootstrap for frontend.                                                                                                                             |
 | 2. | Heidi SQL for storing data.                                                                                                                                            |
 | 3. | Flask and python for deployment.                                                                                                                                       |
 
